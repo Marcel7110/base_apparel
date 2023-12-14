@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h1{
+    color: hsl(0, 6%, 24%);
+    font-size: 58px;
+}
+
+p{
+    margin: 32px 0;
+}
+
+.title, p, input::placeholder{
+    color: hsl(0, 36%, 70%)
+}
+
+.title{
+    font-weight: 300;
+}
+
+.logo-box{
+    margin-top: 32px;
+}
+
+.container,.logo-box{
+    padding: 0 128px;
+    max-width: 800px;
+}
+
+main{
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 20% 80%;
+    background-image: url('./images/bg-pattern-desktop.svg');
+    background-size: 60%;
+}
+
+.img-box{
+    grid-column: 2;
+    grid-row: 1/3;
+    background-image: url('./images/hero-desktop.jpg');
+    background-size: cover;
+}
+form{
+    position: relative;
+}
+
+form div{
+    border-radius: 26px;
+    border: 1px solid hsl(0, 80%, 86%);
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 26px;
+}
+
+form div{
+    padding-right: 100px;
+}
+form div input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    padding: 16px;
+    font-size: 18px;
+}
+form div img{
+    width: 24px;
+    height: 24px;
+    visibility: hidden;
+}
+
+button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: 1px solid transparent;
+    cursor: pointer;
+    width: 80px;
+    border-radius: 26px;
+    height: 100%;
+    padding: 8px 0;
+    background: linear-gradient(90deg, hsl(0, 80%, 86%) 0%, hsl(0, 74%, 74%) 100%);
+}
+button:hover, button:active{
+    opacity: 0.7;
+    box-shadow: 0px 10px 10px 0px hsl(0, 74%, 74%);
+}
+
+.input-error{
+    border-color: hsl(0, 93%, 68%);
+}
+
+.error{
+    color: hsl(0, 93%, 68%);
+    padding-left: 16px;
+}
+
+@media (max-width: 1023px){
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .img-box{
+        width: 100%;
+        height: 300px;
+        background-image: url('./images/hero-mobile.jpg');
+    }
+
+    .logo-box{
+        margin: 0;
+    }
+    .container,.logo-box{
+        padding: 32px;
+    }
+    .container{
+        text-align: center;
+    }
+}

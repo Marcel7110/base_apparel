@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Apparel</title>
+</head>
+<body>
+    <main>
+        <div class="logo-box">
+            <img src="./images/logo.svg" alt=""/>
+        </div>
+        <div class="img-box"></div>
+        <div class="container">
+            <h1 class="title">WE'RE</h1>
+            <h1>COMING <br/> SOON</h1>
+            <p>Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
+            <form onsubmit="handleForm(event)">
+                <div id="input-box">
+                    <input type="text" placeholder="Email Address"/>
+                    <img alt="" src="./images/icon-error.svg" id="error-img"/>
+                </div>
+                <button>
+                    <img src="./images/icon-arrow.svg"/>
+                </button>
+            </form>
+            <p id="error" class="error"></p>
+        </div>
+    </main>
+</body>
+</html>
+
+<script>
+    function handleForm(event){
+        event.preventDefault();
+        const email = document.querySelector('input')
+        const error = document.getElementById('error')
+        const img = document.getElementById('error-img')
+        const input_box = document.getElementById('input-box')
+
+        input_box.classList.remove('input-error')
+        error.innerHTML = ''
+        img.style.visibility = 'hidden'
+
+        let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
+
+        if(!email.value || email.value === ''){
+            error.innerHTML = 'Please provide an email'
+            input_box.classList.add('input-error')
+            img.style.visibility = 'visible'
+        }else if(!regex.test(email.value)){
+            error.innerHTML = 'Please provide a valid email'
+            input_box.classList.add('input-error')
+            img.style.visibility = 'visible'
+        }else{
+            email.value = ''
+        }
+    }
+</script>
